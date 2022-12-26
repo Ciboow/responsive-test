@@ -1,0 +1,262 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#FFF0E5;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.nav-wrapper{
+    width:100%;
+    height:90px;
+    margin-bottom:40px;
+}
+.nav-wrapper ul{
+    list-style: none;
+}
+.nav-wrapper li{
+    display:inline;
+    padding-left:15px;
+}
+.nav-wrapper img{
+    width:60px;
+    height:60px;
+    padding-top:15px;
+}
+.nav-wrapper h1{
+    display:inline;
+    font-size: 30px;
+}
+.wrapper{
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    border:0px solid black;
+    width:100%;
+    margin:0;
+    margin-top:20px;
+    
+}
+.output-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    position:relative;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width:300px;
+    height:400px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid black;
+    background-color: rgb(255, 242, 168);
+    box-shadow: -8px 8px 0px 0px black;
+}
+.output-wrapper img{
+    position:absolute;
+    width:55px;
+    height:55px;
+    top:-25px;
+    left:-25px;
+    border:1px solid black;
+    border-radius: 50%;
+    background-color:white;
+    box-shadow:-3px 1px 4px 0px black;
+    
+}
+.output-item{
+    width:270px;
+    height:30px;
+    border:1px solid black;
+    background-color:white;
+    box-shadow: -2px 3px 0px 0px black;
+}
+.output-item h5{
+    padding:8px;
+}
+.break{
+    display:none;
+    flex-basis:100%;
+    height:0;
+}
+.button-wrapper{
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+    margin-top:30px;
+    margin-left:auto;
+    margin-right:auto;
+    border:0px solid black;
+}
+.button-wrapper button{
+    position:relative;
+    width:100px;
+    height:40px;
+    background-color:white;
+
+    animation-name:button-normal;
+    animation-duration: 0.5s;
+    
+}
+
+.selection-box{
+    display:none;
+    width: 240px;
+    height: 450px;
+    margin:0px;
+
+    border: 1px solid black;
+    background:rgb(255, 242, 168);
+    box-shadow: -8px 8px 0px 0px black;
+}
+
+.selection-box img{
+    display:block;
+    margin-top:100px;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%; 
+
+}
+
+.selection-box h3{
+    margin:0;
+    margin-top:30px;
+    text-align: center;
+}
+
+@keyframes button-normal{
+    0%{
+        bottom:5px;
+        left:5px;
+        box-shadow: -8px 12px 0px 0px black;
+    }
+    100%{
+        bottom:0px;
+        left:0px;
+        box-shadow: 0px 0px 0px 0px black;
+    }
+}
+.button-wrapper button:hover{
+    animation-name:button-hover;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes button-hover{
+    0%{
+        bottom:0px;
+        left:0px;
+        box-shadow: 0px 0px 0px 0px black;
+    }
+    100%{
+        bottom:5px;
+        left:5px;
+        box-shadow: -8px 12px 0px 0px black;
+
+    }
+}
+
+.button-wrapper button:active{
+    animation-name:button-normal;
+    animation-duration: 0.2s;
+    animation-fill-mode:forwards;
+}
+
+@media only screen and (min-width:601px){
+    .nav-wrapper{
+        margin-bottom:30px;
+    }
+    .output-wrapper{
+
+        width:550px;
+        height:400px;
+
+    }
+    .output-item{
+        width:250px;
+        height:55px;
+        border:1px solid black;
+        background-color:white;
+        box-shadow: -2px 3px 0px 0px black;
+    }
+    .output-item h5{
+        padding-top:23px;
+        padding-left:10px;
+
+    }
+    .break{
+        display:block;
+    }
+
+}
+
+@media only screen and (min-width:1024px){
+    .nav-wrapper{
+        height:75px;
+    }
+    .nav-wrapper li{
+        display:inline;
+        padding-left:10px;
+    }
+    .nav-wrapper img{
+        height:50px;
+        width:50px;
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .nav-wrapper h1{
+        display:inline;
+        font-size: 27px;
+    }
+    .output-wrapper{
+        align-content:space-evenly;
+        width:700px;
+        height:400px;
+        margin-left:15px;
+        margin-right:0px;
+    }
+    .output-item{
+
+        margin-top:15px;
+        margin-bottom:15px;
+        width:300px;
+        height:50px;
+
+    }
+    .output-item h5{
+        padding-top:20px;
+        padding-left:10px;
+    }
+    #phoneButton{
+        display:none;
+    }
+    #selectionBox{
+        display:block;
+    }
+    #miniLogo{
+        display:none;
+    }
+}
+
+@media only screen and (min-width:1126px){
+    .output-wrapper{
+        width:900px;
+        height:400px;
+        margin-left:50px;
+    }
+    .output-item{
+        margin:0px;
+        width:400px;
+    }
+    .selection-box{
+        width: 300px;
+        height: 500px;
+    }
+    
+}
