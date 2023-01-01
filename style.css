@@ -3,19 +3,38 @@
     padding:0;
 }
 body{
-    background-color:#FFF0E5;
+    --background-color:#FFF0E5;
+    --selectionBgColor:rgb(255, 242, 168);
+    --selectionHoverBgColor:rgb(248, 231, 135);
+    --textColor:black;
+    --animationDuration:0.25s;
+    --accent-color:orangered;
+    --border-radius:10px;
+    --inBoxTextColor:var(--textColor);
+
+    background-color:var(--background-color);
     overflow-x: hidden;
+}
+
+body.dark{
+    --background-color:#232A2F;
+    --selectionBgColor:#EDEAE4;
+    --accent-color:#D0D066;
+    --textColor:#F9F8F7;
+    --inBoxTextColor:var(--background-color);
+    
 }
 
 h2{
     text-align:center;
     margin-top:40px;
     margin-bottom:20px;
+    color:var(--textColor);
 }
 
 a{
     text-decoration: none;
-    color:black;
+    color:var(--textColor);
 }
 
 .nav-wrapper{
@@ -30,14 +49,16 @@ a{
     display:inline;
     padding-left:15px;
 }
-.nav-wrapper img{
+#logo{
     width:60px;
     height:60px;
     padding-top:15px;
+    color:var(--textColor);
 }
 .nav-wrapper h1{
     display:inline;
     font-size: 30px;
+    color:var(--textColor);
 }
 
 .selection-wrapper{
@@ -57,8 +78,9 @@ a{
     width:300px;
     height:100px;
     border:1px solid black;
-    background:rgb(255, 242, 168);
+    background:var(--selectionBgColor);
     box-shadow: -3px 5px 2px 0px black;
+    border-radius: var(--border-radius);
     
 }
 .selection-box img{
@@ -69,7 +91,23 @@ a{
 .selection-box h3{
     display:inline;
     padding:10px;
+    color:var(--inBoxTextColor);
 }
+.theme-toggle-button{
+    background-color: var(--accent-color);
+    color:var(--background-color);
+
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin:30px;
+    border-radius: 5px;
+    border:0px solid black;
+    cursor: pointer;
+
+}
+
+
 
 @media only screen and (min-width:601px){
     h2{
@@ -143,7 +181,7 @@ a{
         box-shadow:none;
         
         animation-name:selection-hover-out;
-        animation-duration:0.25s;
+        animation-duration:var(--animationDuration);
         animation-fill-mode: forwards;
     }
     @keyframes selection-hover-out{
@@ -151,20 +189,20 @@ a{
             left:10px;
             bottom:10px;
             box-shadow: -15px 10px 0px 0px black;
-            background:rgb(248, 231, 135);
+            background:var(--selectionHoverBgColor);
         }
         100%{
             left:0;
             bottom:0;
             box-shadow: 0px 0px 0px 0px black;
-            background:rgb(255, 242, 168);
+            background:var(--selectionBgColor);
         }
     }
 
     .selection-box:hover{
 
         animation-name: selection-hover;
-        animation-duration: 0.25s;
+        animation-duration: var(--animationDuration);
         animation-fill-mode: forwards;
         
     }
@@ -173,20 +211,20 @@ a{
             left:0;
             bottom:0;
             box-shadow: 0px 0px 0px 0px black;
-            background:rgb(255, 242, 168);
+            background:var(--selectionBgColor);
         }
         100%{
             left:10px;
             bottom:10px;
             box-shadow: -15px 10px 0px 0px black;
-            background:rgb(248, 231, 135);
+            background:var(--selectionHoverBgColor);
             
         }
     }
 
     .selection-box:active{
         animation-name: selection-hover-out;
-        animation-duration: 0.25s;
+        animation-duration: var(--animationDuration);
         animation-fill-mode: forwards;
     }
 
